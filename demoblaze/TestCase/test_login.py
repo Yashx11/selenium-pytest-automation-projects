@@ -1,9 +1,6 @@
-import time
-
 from pages.BasePage import BasePage
 from pages.HomePage import HomePage
 from Utils.readproperties import read_configurations
-from selenium.webdriver.common.alert import Alert
 
 class TestLogin:
     base_url = read_configurations("Basic Info", "base_url")
@@ -20,7 +17,7 @@ class TestLogin:
         self.driver = setup
         self.driver.get(self.base_url)
         home_page = HomePage(self.driver)
-        home_page.signup(self.username, self.password, home_page.sign_up_success_message)
+        home_page.signup(home_page.get_unique_user_name(), self.password, home_page.sign_up_success_message)
 
     def test_login_with_invalid_details(self, setup):
         self.driver = setup

@@ -3,6 +3,7 @@ import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from datetime import datetime
 
 class BasePage:
     def __init__(self, driver):
@@ -29,3 +30,11 @@ class BasePage:
     def verify_task(self, xpath):
         element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, xpath)))
         assert element.is_displayed()
+
+    def get_unique_user_name(self):
+        current_datetime = datetime.now()
+        formatted_datetime = current_datetime.strftime("%d-%m-%Y-%H-%M-%S")
+        username = f"User-{formatted_datetime}"
+        return username
+
+
