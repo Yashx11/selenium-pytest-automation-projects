@@ -1,4 +1,5 @@
-name: Selenium Tests
+name: Run Tests for All Mini Projects
+
 on: [push, pull_request]
 
 jobs:
@@ -6,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: ["demoblaze"]
-    
+        project: ["demoblaze",]  # List all mini projects
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -18,7 +19,7 @@ jobs:
           python-version: 3.9
 
       - name: Install Dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r ${{ matrix.project }}/requirements.txt
 
       - name: Run Tests
-        run: pytest --alluredir=allure-results
+        run: pytest ${{ matrix.project }}/tests --alluredir=${{ matrix.project }}/allure-results
