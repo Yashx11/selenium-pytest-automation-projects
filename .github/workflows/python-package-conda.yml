@@ -4,6 +4,10 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ["demoblaze"]
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
