@@ -22,4 +22,4 @@ jobs:
         run: pip install -r ${{ matrix.project }}/requirements.txt
 
       - name: Run Tests
-        run: pytest ${{ matrix.project }}/tests --alluredir=${{ matrix.project }}/allure-results
+        run: pytest ${{ matrix.project }}/TestCase --alluredir=${{ matrix.project }}/allure-results
