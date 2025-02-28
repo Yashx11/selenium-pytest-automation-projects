@@ -1,4 +1,4 @@
-from pages.BasePage import BasePage
+from Utils.Logger import logger
 from pages.HomePage import HomePage
 from Utils.readproperties import read_configurations
 from TestCase.test_login import TestLogin
@@ -9,7 +9,7 @@ class TestHomePge:
     def login(self, setup):
         self.driver = setup
         login = TestLogin()
-        login.test_login(setup)
+        login.login(setup)
 
     def test_banner_slider_button(self,setup):
         self.driver = setup

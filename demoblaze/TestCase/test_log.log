@@ -1,0 +1,4 @@
+2025-02-28 22:16:23,817 - INFO - This is an info log
+2025-02-28 22:16:23,818 - DEBUG - This is a debug log
+2025-02-28 22:16:23,818 - WARNING - This is a warning log
+2025-02-28 22:16:23,818 - ERROR - This is an error log

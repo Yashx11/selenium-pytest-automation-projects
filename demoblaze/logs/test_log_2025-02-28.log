@@ -1,0 +1,8 @@
+2025-02-28 22:42:35,155 - INFO - ==== START TEST: test_banner_slider_button ====
+duct ====
+2025-02-28 22:42:35,155 - INFO - ==== START TEST: test_filter_laptop_category_product ====
+2025-02-28 22:42:35,155 - INFO - ==== START TEST: test_filter_phone_category_product ====
+2025-02-28 22:42:41,357 - INFO - ==== END TEST: test_filter_monitor_category_product ====
+2025-02-28 22:42:41,373 - INFO - ==== END TEST: test_banner_slider_button ====
+2025-02-28 22:42:41,486 - INFO - ==== END TEST: test_filter_phone_category_product ====
+2025-02-28 22:42:41,630 - INFO - ==== END TEST: test_filter_laptop_category_product ====
