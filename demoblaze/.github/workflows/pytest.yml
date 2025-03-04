@@ -1,20 +1,27 @@
-name: Selenium Tests
-on: [push, pull_request]
+name: Run Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
-          python-version: 3.9
+          python-version: '3.9'
 
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Tests
-        run: pytest --alluredir=allure-results
+      - name: Run Selenium Tests
+        run: pytest --alluredir=reports
