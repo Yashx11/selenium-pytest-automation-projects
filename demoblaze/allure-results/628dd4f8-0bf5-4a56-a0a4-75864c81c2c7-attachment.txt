@@ -1,0 +1,1 @@
+==== START TEST: test_banner_slider_button ====

@@ -18,13 +18,15 @@ class BasePage:
         element.clear()
         element.send_keys(value)
 
-    def retrive_js_alert_text(self):
+    def retrieve_js_alert_text(self):
+        WebDriverWait(self.driver, 5).until(EC.alert_is_present())
         alert = self.driver.switch_to.alert
-        time.sleep(5)
-        return alert.text
+        text = alert.text
+        alert.accept()
+        return text
 
     def verify_js_alert_task(self, task):
-        element = self.retrive_js_alert_text()
+        element = self.retrieve_js_alert_text()
         assert task == element
 
     def verify_task(self, xpath):
